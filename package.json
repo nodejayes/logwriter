@@ -1,0 +1,16 @@
+{
+  "name": "logwriter",
+  "version": "1.0.0",
+  "description": "writes logfiles",
+  "main": "index.js",
+  "keywords": [
+    "logging",
+    "log",
+    "logfile"
+  ],
+  "author": {
+    "name": "Markus Gilg",
+    "email": "markusgilg@outlook.de"
+  },
+  "license": "MIT"
+}
