@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "writes logfiles",
   "main": "index.js",
+  "repository": {
+    "url": "https://github.com/nodejayes/logwriter.git"
+  },
   "keywords": [
     "logging",
     "log",
