@@ -114,6 +114,9 @@ const writeCacheToFile = function () {
 };
 
 const writeCache = function (msg, type) {
+    if (!(msg instanceof String)) {
+        msg = JSON.stringify(msg);
+    }
     CACHE.push(UTIL.format('%s%s%s',
         getTimestamp(this.timestampformat, type),
         msg, OS.EOL));
