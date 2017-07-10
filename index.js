@@ -4,7 +4,7 @@ const FS    = require('fs');
 const PATH  = require('path');
 const OS    = require('os');
 const UTIL  = require('util');
-const CACHE = [];
+let CACHE = [];
 const FLAGS = Object.freeze({
     DEBUG: 'DEBUG',
     INFO: 'INFO',
