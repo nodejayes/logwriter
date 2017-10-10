@@ -107,8 +107,9 @@ const writeFile = function (data, idx) {
 
 const writeCacheToFile = function () {
     let i = 0;
-    while (i < CACHE.length) {
-        writeFile.bind(this)(CACHE[i], i);
+    let l = CACHE.length;
+    while (i < l) {
+        writeFile.bind(this)(CACHE[0].msg, 0);
         i++;
     }
 };
@@ -117,9 +118,12 @@ const writeCache = function (msg, type) {
     if (!(msg instanceof String)) {
         msg = JSON.stringify(msg);
     }
-    CACHE.push(UTIL.format('%s%s%s',
-        getTimestamp(this.timestampformat, type),
-        msg, OS.EOL));
+    CACHE.push({
+        t: new Date(),
+        msg: UTIL.format('%s%s%s',
+            getTimestamp(this.timestampformat, type),
+            msg, OS.EOL)
+        });
 };
 
 class LogWriter {
