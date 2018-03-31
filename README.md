@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/nodejayes/logwriter.svg?branch=master)](https://travis-ci.org/nodejayes/logwriter)
+[![Coverage Status](https://coveralls.io/repos/github/nodejayes/logwriter/badge.svg?branch=master)](https://coveralls.io/github/nodejayes/logwriter?branch=master)
 
 ### Logwriter
 
