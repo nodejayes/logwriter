@@ -8,7 +8,7 @@ notifications:
 jobs:
   include:
   - stage: test
-    script: npm coverage
+    script: npm run coverage
 deploy:
   provider: npm
   email: markusgilg@outlook.de
