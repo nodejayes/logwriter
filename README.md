@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nodejayes/logwriter.svg?branch=master)](https://travis-ci.org/nodejayes/logwriter)
+
 ### Logwriter
 
 Simply Logfile writer that write Logfiles async. First all incoming Logs are write in Memory than an Interval writes the Memory to a Logfile and clears it.
