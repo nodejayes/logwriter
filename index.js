@@ -140,7 +140,14 @@ class LogWriter {
         this.timestampformatfile = '%s-%s-%s_%s-%s-%s-%s';
 
         createFileIfNotExists.bind(this)();
-        setInterval(writeCacheToFile.bind(this), this.synctime);
+        this.interval = setInterval(writeCacheToFile.bind(this), this.synctime);
+    }
+
+    close() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+        }
     }
 
     debug (msg) {

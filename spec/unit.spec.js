@@ -15,31 +15,43 @@ describe('LogWriter Spec', () => {
         l = new LOGGER({
             logfilepath: LOGFILE,
             maxfilesize: 20,
-            loglevel: 1
+            loglevel: 4
         });
     });
 
-    it('log debug', async () => {
+    it('log debug', (done) => {
         l.debug('DEBUG MESSAGE');
-        await setTimeout(() => {}, 5000);
-        assert.equal(readFileSync(LOGFILE).toString('utf8').includes('DEBUG MESSAGE'), true);
+        setTimeout(() => {
+            assert.equal(readFileSync(LOGFILE).toString('utf8').includes('DEBUG MESSAGE'), true);
+            done();
+        }, 2000);
     });
 
-    it('log info', async () => {
-        l.debug('INFO MESSAGE');
-        await setTimeout(() => {}, 5000);
-        assert.equal(readFileSync(LOGFILE).toString('utf8').includes('INFO MESSAGE'), true);
+    it('log info', (done) => {
+        l.info('INFO MESSAGE');
+        setTimeout(() => {
+            assert.equal(readFileSync(LOGFILE).toString('utf8').includes('INFO MESSAGE'), true);
+            done();
+        }, 2000);
     });
 
-    it('log warning', async () => {
-        l.debug('WARNING MESSAGE');
-        await setTimeout(() => {}, 2000);
-        assert.equal(readFileSync(LOGFILE).toString('utf8').includes('WARNING MESSAGE'), true);
+    it('log warning', (done) => {
+        l.warning('WARNING MESSAGE');
+        setTimeout(() => {
+            assert.equal(readFileSync(LOGFILE).toString('utf8').includes('WARNING MESSAGE'), true);
+            done();
+        }, 2000);
     });
 
-    it('log error', async () => {
-        l.debug('ERROR MESSAGE');
-        await setTimeout(() => {}, 2000);
-        assert.equal(readFileSync(LOGFILE).toString('utf8').includes('ERROR MESSAGE'), true);
+    it('log error', (done) => {
+        l.error('ERROR MESSAGE');
+        setTimeout(() => {
+            assert.equal(readFileSync(LOGFILE).toString('utf8').includes('ERROR MESSAGE'), true);
+            done();
+        }, 2000);
     });
+
+    it('close LogWriter', () => {
+        l.close();
+    })
 });

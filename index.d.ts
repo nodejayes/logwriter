@@ -19,4 +19,5 @@ export declare class LogWriter {
     info(msg: string): void;
     warning(msg: string): void;
     error(msg: string): void;
+    close(): void;
 }

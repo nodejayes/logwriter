@@ -3,3 +3,6 @@
 .nyc_output/**
 coverage/**
 node_modules/**
+spec/log/**
+package-lock.json
+yarn.lock
