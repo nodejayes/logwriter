@@ -21,6 +21,10 @@
     "test": "nyc mocha --bail --timeout 30000 \"./spec/**/*.spec.js\"",
     "coverage": "nyc mocha --bail --timeout 30000 \"./spec/**/*.spec.js\" && nyc report --reporter=text-lcov | coveralls"
   },
+  "bugs": {
+    "email": "markusgilg@outlook.de",
+    "url": "https://github.com/nodejayes/logwriter/issues"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
